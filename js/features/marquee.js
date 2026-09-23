@@ -22,12 +22,17 @@ export function initMarquee() {
 
   const loop = gsap.to(row, { xPercent: -50, duration: 16, ease: 'none', repeat: -1 });
   row.closest('.marquee').classList.add('marquee--gsap');
+  // Só reage enquanto a faixa está na tela; fora dela, fica pausada.
+  // Uma única animação de velocidade por vez: acelera e depois volta ao normal.
   ScrollTrigger.create({
-    start: 0, end: 'max',
+    trigger: row.closest('.marquee'), start: 'top bottom', end: 'bottom top',
+    onToggle: (self) => (self.isActive ? loop.resume() : loop.pause()),
     onUpdate(self) {
       const speed = 1 + Math.min(Math.abs(self.getVelocity()) / 300, 6);
-      gsap.to(loop, { timeScale: self.direction * speed, duration: 0.2, overwrite: true });
-      gsap.to(loop, { timeScale: self.direction, duration: 1.2, delay: 0.25 });
+      gsap.to(loop, {
+        timeScale: self.direction * speed, duration: 0.2, overwrite: true,
+        onComplete: () => gsap.to(loop, { timeScale: self.direction, duration: 1.2, delay: 0.25, overwrite: true }),
+      });
     },
   });
 }

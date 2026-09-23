@@ -1,10 +1,10 @@
 // Ponto de entrada. Cada import é uma funcionalidade isolada em js/features/.
-// A ordem importa: plugins → rolagem → cursor (o mapa usa) → resto.
+// A ordem importa: plugins → rolagem → resto.
 import { registerPlugins } from './core/env.js';
 import { initSmoothScroll, refreshOnLoad } from './core/scroll.js';
 import { initProgress } from './features/progress.js';
 import { initMenu, isMenuOpen, closeMenu } from './features/menu.js';
-import { initCursor } from './features/cursor.js';
+import { initMagnetic } from './features/magnetic.js';
 import { initHero } from './features/hero.js';
 import { initReveals } from './features/reveals.js';
 import { initMap } from './features/map.js';
@@ -19,7 +19,7 @@ registerPlugins();
 initSmoothScroll();
 initProgress();
 initMenu();
-initCursor();
+initMagnetic();
 initHero();
 initReveals();
 initMap();

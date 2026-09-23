@@ -13,14 +13,22 @@ export function enableProximity(area, chars, { base = 780, radius = 260, lift = 
     weight: gsap.quickTo(c, 'fontWeight', { duration: 0.5, ease: 'power3' }),
     y: gsap.quickTo(c, 'y', { duration: 0.6, ease: 'power3' }),
   }));
-  area.addEventListener('pointermove', (e) => {
-    setters.forEach((s) => {
-      const r = s.c.getBoundingClientRect();
-      const dist = Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2));
+  // No máximo um cálculo por quadro, mesmo que o mouse dispare vários eventos.
+  let mx = 0, my = 0, queued = false;
+  const update = () => {
+    queued = false;
+    const rects = setters.map((s) => s.c.getBoundingClientRect()); // lê tudo antes de escrever
+    setters.forEach((s, i) => {
+      const r = rects[i];
+      const dist = Math.hypot(mx - (r.left + r.width / 2), my - (r.top + r.height / 2));
       const f = Math.max(0, 1 - dist / radius); // 1 = mouse em cima, 0 = longe
       s.weight(Math.max(200, base - 540 * f));
       s.y(lift * f);
     });
+  };
+  area.addEventListener('pointermove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    if (!queued) { queued = true; requestAnimationFrame(update); }
   });
   area.addEventListener('pointerleave', () => setters.forEach((s) => { s.weight(base); s.y(0); }));
 }

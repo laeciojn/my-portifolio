@@ -1,6 +1,5 @@
 // Mapa arrastável do topo da página: cada bloco é um nó SVG, e as linhas se redesenham ao arrastar.
 import { gsap, hasGsap, reduce, NS } from '../core/env.js';
-import { showDragLabelOn } from './cursor.js';
 
 const NODES = [
   { id: 'me', center: true, label: 'Laécio', x: 310, y: 235 },
@@ -51,29 +50,37 @@ function build() {
 
 const pos = (id) => [gsap.getProperty(nodeEls[id], 'x'), gsap.getProperty(nodeEls[id], 'y')];
 
+// Comprimento de cada linha, guardado para não medir a cada quadro.
+const edgeLens = [];
+// Animações que ficam em loop; pausam quando o topo sai da tela.
+const loops = [];
+
 // Curva de Bézier entre dois nós: sai na horizontal e chega na horizontal.
 function updateEdges() {
   EDGES.forEach(([a, b], i) => {
     const [x1, y1] = pos(a), [x2, y2] = pos(b), mx = (x1 + x2) / 2;
     edgeEls[i].setAttribute('d', `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`);
+    edgeLens[i] = edgeEls[i].getTotalLength();
   });
 }
 
-// Pontinhos que correm pelas linhas. Lemos o caminho a cada quadro
-// porque a linha muda de forma enquanto o bloco é arrastado.
+// Pontinhos que correm pelas linhas. O comprimento vem de edgeLens,
+// que é atualizado sempre que um bloco é arrastado.
 function startPackets() {
   edgeEls.forEach((path, i) => {
     const o = { t: 0 }, dot = packetEls[i];
-    gsap.to(o, {
+    loops.push(gsap.to(o, {
       t: 1, duration: 1.6, ease: 'none', repeat: -1, delay: i * 0.27,
       onStart: () => gsap.set(dot, { opacity: 1 }),
       onUpdate() {
-        const p = path.getPointAtLength(o.t * path.getTotalLength());
+        const p = path.getPointAtLength(o.t * edgeLens[i]);
         dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y);
       },
-    });
+    }));
   });
-  if (!reduce) gsap.to(nodeEls.me.querySelector('.shape'), { attr: { r: 56 }, duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+  if (!reduce) loops.push(gsap.to(nodeEls.me.querySelector('.shape'), { attr: { r: 56 }, duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: -1 }));
+  const toggle = (self) => loops.forEach((t) => (self.isActive ? t.resume() : t.pause()));
+  toggle(ScrollTrigger.create({ trigger: '.map', start: 'top bottom', end: 'bottom top', onToggle: toggle }));
 }
 
 export function initMap() {
@@ -89,7 +96,6 @@ export function initMap() {
     onDrag: updateEdges,
     onThrowUpdate: updateEdges,
   });
-  showDragLabelOn(Object.values(nodeEls));
 
   if (reduce) { startPackets(); return; }
   // Começa escondido; a entrada do topo chama revealMap() quando o loader sai.

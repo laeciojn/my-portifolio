@@ -6,8 +6,8 @@ export function initReveals() {
 
   // Transição entre seções: o conteúdo sobe e aparece enquanto a seção entra na tela (preso ao scroll).
   document.querySelectorAll('main > section:not(.hero)').forEach((sec) => {
-    gsap.fromTo(sec.querySelector('.wrap'), { y: 90, opacity: 0.35, scale: 0.97 }, {
-      y: 0, opacity: 1, scale: 1, ease: 'power1.out',
+    gsap.fromTo(sec.querySelector('.wrap'), { y: 70, opacity: 0.35 }, {
+      y: 0, opacity: 1, ease: 'power1.out',
       scrollTrigger: { trigger: sec, start: 'top bottom', end: 'top 50%', scrub: 0.6 },
     });
   });

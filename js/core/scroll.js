@@ -11,7 +11,7 @@ export function initSmoothScroll() {
     content: '#smooth-content',
     smooth: 0.8,
     ease: 'power3',
-    effects: true,
+    effects: false,
     smoothTouch: 0,
   });
 }
