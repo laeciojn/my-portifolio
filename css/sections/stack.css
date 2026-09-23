@@ -1,0 +1,29 @@
+/* Stack agrupada e faixa de certificações. */
+/* stack */
+.stack{background:var(--paper)}
+.filters{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px}
+.filters button{min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:600 16px var(--font);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.groups{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;align-items:start}
+.group{border-radius:26px;background:var(--paper-2);border:1.5px solid var(--line);padding:24px}
+.group.is-hidden{display:none}
+.group h3{font-size:22px;font-weight:720;margin-bottom:16px}
+.group ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tech{display:flex;align-items:center;min-width:0;gap:10px;font-weight:600;font-size:16px;padding:6px;border-radius:14px;overflow-wrap:anywhere;transition:background .2s}
+.tech:hover{background:var(--paper)}
+.tech__logo{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff;background:var(--cobalt);flex:none;letter-spacing:-.02em;font-variation-settings:"wdth" 75}
+.group:nth-child(2) .tech__logo{background:#0A0F3D}
+:root[data-theme="dark"] .group:nth-child(2) .tech__logo{background:#3A45C9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .group:nth-child(2) .tech__logo{background:#3A45C9}}
+.group:nth-child(3) .tech__logo{background:var(--signal);color:#0A0F3D}
+.group:nth-child(4) .tech__logo{background:#5A66FF}
+.group:nth-child(5) .tech__logo{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:24px 0}
+.marquee__row{display:flex;width:max-content;animation:marquee-scroll 16s linear infinite}
+.marquee--gsap .marquee__row{animation:none}
+.marquee__group{display:flex;flex:none}
+.marquee__item{font-size:clamp(22px,3vw,38px);font-weight:650;white-space:nowrap;padding-right:28px;display:flex;align-items:center;gap:28px;font-variation-settings:"wdth" 85}
+.marquee__item::after{content:"";width:13px;height:13px;background:var(--signal);transform:rotate(45deg);flex:none}
+@keyframes marquee-scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee__row{animation:none}}

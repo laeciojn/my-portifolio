@@ -1,0 +1,46 @@
+/* O que eu faço (cartões), Sobre mim com números e mapa arrastável (fica no topo). */
+/* sobre */
+.sobre{background:var(--paper-2)}
+.sobre__grid{margin-top:56px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.sobre__hello{font-size:clamp(36px,4.5vw,64px);line-height:1;font-weight:760;letter-spacing:-.025em;font-variation-settings:"wdth" 85}
+.sobre__text p+p{margin-top:22px}
+.sobre__text p{font-size:clamp(18px,1.45vw,21px);color:var(--ink-soft);max-width:48ch}
+.sobre__text p strong{color:var(--ink);font-weight:650}
+.facts{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px}
+.fact{padding:12px 18px;border-radius:16px;background:var(--paper);border:1.5px solid var(--line);font-weight:600;font-size:16px}
+.fact b{color:var(--accent-text)}
+.map{color:#fff}
+.map svg{display:block;width:100%;height:auto;overflow:visible;touch-action:none}
+.map__caption{margin-top:12px;font-size:15px;color:var(--on-cobalt-soft);display:flex;align-items:center;gap:10px;padding:0 6px}
+.map__caption i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--signal)}
+.node{cursor:grab}
+.node:active{cursor:grabbing}
+.node text{font:600 15px var(--font);fill:#fff;pointer-events:none}
+.node .shape{fill:var(--cobalt-deep);stroke:#fff;stroke-width:2;transition:fill .25s}
+.node:hover .shape{fill:#2B3BFF}
+.node--center .shape{fill:var(--signal);stroke:var(--signal)}
+.node--center:hover .shape{fill:#fff}
+.node--center text{fill:#0A0F3D;font-size:18px;font-weight:800}
+.edge{fill:none;stroke:rgba(255,255,255,.7);stroke-width:2;vector-effect:non-scaling-stroke}
+.packet{fill:var(--signal)}
+.servicos{background:var(--paper);padding-top:0}
+.cards{margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,20px)}
+.card{position:relative;padding:28px 24px;border-radius:26px;background:var(--cobalt);color:#fff;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;will-change:transform}
+.card:nth-child(3){background:var(--signal);color:#0A0F3D}
+.card svg{width:56px;height:56px;color:var(--signal)}
+.card:nth-child(3) svg{color:#0A0F3D}
+.card h4{margin:32px 0 0;font-size:26px;line-height:1.05;font-weight:760;font-variation-settings:"wdth" 85}
+.card p{margin-top:10px;font-size:16px;color:var(--on-cobalt-soft)}
+.card:nth-child(3) p{color:#1d2466}
+.card__glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.25),transparent 55%);opacity:0;transition:opacity .3s}
+.card:hover .card__glare{opacity:1}
+@media (max-width:1000px){.sobre__grid{grid-template-columns:1fr}.cards--3{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}.card{min-height:230px}}
+.cards--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card__link{display:inline-block;margin-top:20px;font-weight:650;font-size:16px;color:var(--signal);text-decoration:none}
+.card:nth-child(3) .card__link{color:#0A0F3D}
+.card__link:hover{text-decoration:underline;text-underline-offset:4px}
+.stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stat-card{padding:24px;border-radius:24px;background:var(--paper);border:1.5px solid var(--line)}
+.stat-card strong{display:block;font-size:clamp(40px,4.4vw,64px);line-height:.95;font-weight:800;color:var(--accent-text);font-variation-settings:"wdth" 75}
+.stat-card span{display:block;margin-top:10px;font-size:15px;line-height:1.35;color:var(--ink-soft)}

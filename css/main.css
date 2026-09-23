@@ -1,0 +1,14 @@
+/* Ponto de entrada do CSS: importa tudo na ordem certa. */
+@import url("tokens.css");
+@import url("base.css");
+@import url("sections/loader.css");
+@import url("sections/chrome.css");
+@import url("sections/menu.css");
+@import url("sections/hero.css");
+@import url("sections/manifesto.css");
+@import url("sections/sobre.css");
+@import url("sections/stack.css");
+@import url("sections/experiencia.css");
+@import url("sections/projetos.css");
+@import url("sections/formacao.css");
+@import url("sections/contato.css");

@@ -1,0 +1,14 @@
+/* Formação, certificações e idiomas. */
+.formacao{background:var(--paper)}
+.formacao__grid{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.edu{padding:24px 0;border-top:1.5px solid var(--ink)}
+.edu+.edu{border-top:1px solid var(--line)}
+.edu__when{font-size:15px;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+.edu h3{margin-top:8px;font-size:clamp(22px,2vw,28px);line-height:1.15;font-weight:720;letter-spacing:-.015em}
+.edu__school{margin-top:4px;color:var(--ink-soft)}
+.award{margin-top:20px;display:inline-block;padding:14px 20px;border-radius:18px;background:var(--signal);color:#0A0F3D;font-weight:600}
+.formacao__sub{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
+.formacao__sub:not(:first-child){margin-top:36px}
+.certs{margin-top:16px}
+.formacao__lang{margin-top:12px;color:var(--ink-soft)}
+@media (max-width:900px){.formacao__grid{grid-template-columns:1fr}}

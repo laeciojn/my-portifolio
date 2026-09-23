@@ -1,0 +1,21 @@
+/* contato */
+.contato{background:var(--cobalt);color:#fff;overflow:hidden}
+.contato .wrap{padding-block:clamp(110px,14vw,180px) 40px}
+.contato__q{font-size:clamp(40px,5.4vw,84px);line-height:.95;letter-spacing:-.03em;font-weight:740;max-width:14ch;font-variation-settings:"wdth" 82}
+.mail{display:inline-block;margin-top:36px;font-size:clamp(24px,3.4vw,46px);font-weight:650;color:var(--signal);text-decoration:none;border-bottom:3px solid transparent;transition:border-color .25s;word-break:break-all}
+.mail:hover{border-color:var(--signal)}
+.contato__row{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.copy-note{font-size:15px;color:var(--on-cobalt-soft);min-height:1.5em;margin-top:12px}
+.footer{margin-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:15px;color:var(--on-cobalt-soft);border-top:1px solid rgba(255,255,255,.28);padding-top:22px}
+.to-top{background:none;border:none;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:44px;padding:0}
+.contato__grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:end}
+.contato__lede{margin-top:24px;font-size:clamp(18px,1.45vw,21px);max-width:40ch;color:var(--on-cobalt-soft)}
+.status{margin:0;border-radius:28px;background:var(--cobalt-deep);padding:8px 28px}
+.status div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.status div:last-child{border-bottom:none}
+.status dt{font-size:15px;color:var(--on-cobalt-soft)}
+.status dd{margin:0;font-weight:650;text-align:right}
+.status a{color:var(--signal);text-decoration:none}
+.status a:hover{text-decoration:underline;text-underline-offset:4px}
+.contato .footer{margin-top:clamp(64px,8vw,110px)}
+@media (max-width:900px){.contato__grid{grid-template-columns:1fr}.status dd{text-align:left}}

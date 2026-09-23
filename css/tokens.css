@@ -1,0 +1,16 @@
+/* Cores, fonte e espaçamentos. Mude aqui para trocar o tema do site inteiro. */
+:root{
+  --cobalt:#2130F0; --cobalt-deep:#131C9E; --signal:#FFD23F;
+  --paper:#EEF0FA; --paper-2:#E1E5F7; --ink:#0A0F3D; --ink-soft:#3B4270; --line:rgba(10,15,61,.18);
+  --accent-text:#2130F0;
+  --on-cobalt-soft:rgba(255,255,255,.78);
+  --font:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--paper:#0C113A;--paper-2:#141A4D;--ink:#E9EBFB;--ink-soft:#B3B8DE;--line:rgba(233,235,251,.18);--accent-text:#FFD23F}
+}
+:root[data-theme="dark"]{--paper:#0C113A;--paper-2:#141A4D;--ink:#E9EBFB;--ink-soft:#B3B8DE;--line:rgba(233,235,251,.18);--accent-text:#FFD23F}

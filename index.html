@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laécio Neves | Portfólio</title>
+<meta name="description" content="Laécio Neves: back-end com Java e Spring Boot, automação de processos, cloud e DevOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__name" id="loaderName">Laécio Neves</div>
+  <div class="loader__count"><span id="loaderCount">0</span></div>
+</div>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span>arraste</span></div>
+
+<header class="bar on-hero">
+  <a href="#inicio" class="bar__mono" data-scroll aria-label="Laécio Neves, início">LN</a>
+  <nav class="bar__nav" aria-label="Principal">
+    <a href="#sobre" data-scroll>Sobre</a>
+    <a href="#stack" data-scroll>Stack</a>
+    <a href="#projetos" data-scroll>Projetos</a>
+    <a href="#experiencia" data-scroll>Trajetória</a>
+    <a href="#contato" data-scroll>Contato</a>
+  </nav>
+  <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span></button>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button type="button" class="menu__close" id="menuClose">Fechar
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+  </button>
+  <div class="menu__grid">
+    <div class="menu__col menu__small">
+      <h2>Social</h2>
+      <ul>
+        <li><a href="https://github.com/laeciojn" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/laecioneves" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <nav class="menu__col menu__main" aria-label="Seções">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#inicio" data-scroll><span>Início</span></a></li>
+        <li><a href="#sobre" data-scroll><span>Sobre</span></a></li>
+        <li><a href="#stack" data-scroll><span>Stack</span></a></li>
+        <li><a href="#experiencia" data-scroll><span>Experiência</span></a></li>
+        <li><a href="#projetos" data-scroll><span>Projetos</span></a></li>
+        <li><a href="#formacao" data-scroll><span>Formação</span></a></li>
+        <li><a href="#contato" data-scroll><span>Contato</span></a></li>
+      </ul>
+    </nav>
+    <div class="menu__col menu__small">
+      <h2>Contato</h2>
+      <ul><li><a href="mailto:laeciojesusn@gmail.com">laeciojesusn@gmail.com</a></li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="detail__top">
+    <button type="button" class="detail__back" id="detailBack">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      Voltar aos projetos
+    </button>
+    <div class="detail__nav">
+      <button type="button" id="detailPrev">Anterior</button>
+      <button type="button" id="detailNext">Próximo</button>
+    </div>
+  </div>
+  <div class="detail__inner" id="detailInner"></div>
+</div>
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main>
+
+<!-- INÍCIO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero__grid">
+    <div class="hero__main">
+      <h1 class="hero__title" aria-label="Laécio Neves">
+        <span class="line" data-proximity>Laécio</span>
+        <span class="line" data-proximity>Neves</span>
+      </h1>
+      <p class="hero__intro">Comecei no operacional de um restaurante. Hoje programo em <strong>Java</strong> numa fábrica de software e estudo cloud nas horas vagas.</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid magnetic" href="#sobre" data-scroll>Me conhecer</a>
+        <a class="btn btn--ghost magnetic" href="#projetos" data-scroll>Ver projetos</a>
+      </div>
+      <p class="hero__loc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Brasília, DF
+      </p>
+    </div>
+    <div class="map">
+      <svg id="flowSvg" viewBox="0 0 600 480" role="img" aria-label="Mapa com o que move Laécio: Java, Spring, Automação, Cloud, DevOps e IA. Os blocos podem ser arrastados.">
+        <g id="edges"></g><g id="packets"></g><g id="nodes"></g>
+      </svg>
+      <p class="map__caption"><i aria-hidden="true"></i>Um mapa do que me move. Arraste os blocos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA DE TECNOLOGIAS -->
+<div class="marquee" aria-label="Tecnologias">
+  <div class="marquee__row" id="marqueeRow">
+    <div class="marquee__group">
+      <span class="marquee__item">Java</span>
+      <span class="marquee__item">Spring Boot</span>
+      <span class="marquee__item">APIs REST</span>
+      <span class="marquee__item">GraphQL</span>
+      <span class="marquee__item">SQL</span>
+      <span class="marquee__item">Automação e RPA</span>
+      <span class="marquee__item">BPMN</span>
+      <span class="marquee__item">Cloud e DevOps</span>
+    </div>
+  </div>
+</div>
+
+<!-- FRASE -->
+<section class="manifesto sec" aria-label="Como eu trabalho">
+  <div class="wrap">
+    <p class="scrub-words">Gosto de entender como um processo funciona por dentro e deixar o sistema cuidar da parte repetitiva.</p>
+  </div>
+</section>
+
+<!-- O QUE EU FAÇO -->
+<section class="servicos sec" id="servicos" aria-labelledby="servTitle">
+  <div class="wrap">
+    <p class="kicker">O que eu faço</p>
+    <h2 class="h2 reveal" id="servTitle">Entregando valor através do back-end</h2>
+    <div class="cards cards--3">
+      <article class="card">
+        <span class="card__glare" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="draw" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path class="draw" d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+        <div>
+          <h4>APIs e integrações</h4>
+          <p>APIs REST com Java e Spring Boot, e integrações entre sistemas com GraphQL, Make e Microsoft Graph API.</p>
+          <a class="card__link" href="#projetos" data-scroll>Ver projetos →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card__glare" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="draw" d="M20 12a8 8 0 0 1-14 5.3"/><path class="draw" d="M4 12a8 8 0 0 1 14-5.3"/><path class="draw" d="M18 3v4h-4"/><path class="draw" d="M6 21v-4h4"/></svg>
+        <div>
+          <h4>Automação e RPA</h4>
+          <p>Playwright, Python, Make e Pipefy tirando o trabalho repetitivo das pessoas. Mais de 9.000 documentos deixaram de ser baixados à mão.</p>
+          <a class="card__link" href="#sobre" data-scroll>Saiba mais →</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card__glare" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="draw" x="3" y="4" width="7" height="6" rx="1.5"/><rect class="draw" x="14" y="14" width="7" height="6" rx="1.5"/><path class="draw" d="M6.5 10v4a3 3 0 0 0 3 3H14"/></svg>
+        <div>
+          <h4>Análise de processos</h4>
+          <p>Modelagem BPMN, levantamento de requisitos, testes funcionais e gestão de GMUDs.</p>
+          <a class="card__link" href="#experiencia" data-scroll>Ver experiência →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre sec" id="sobre" aria-labelledby="sobreTitle">
+  <div class="wrap">
+    <p class="kicker">Sobre mim</p>
+    <h2 class="h2 reveal" id="sobreTitle">A trajetória por trás do código</h2>
+    <div class="sobre__grid">
+      <div class="sobre__text">
+        <p>Hoje estou na <strong>Develcode</strong>, uma fábrica de software, em squads com Java e React.</p>
+        <p>Antes, na <strong>Boa Safra</strong>, desenvolvi integrações com GraphQL e Microsoft Graph API e automações que eliminaram o download manual de mais de 9.000 documentos, reduzindo tempo e esforço da equipe.</p>
+        <p>Tenho prática com Java, Spring Boot, JPA/Hibernate e POO; MySQL, PostgreSQL e MongoDB; e análise de processos (BPMN), testes funcionais e GMUDs. Antes do back-end, passei por suporte técnico e infraestrutura, o que me deu uma visão do ciclo inteiro: do código à operação.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><strong>3+</strong><span>anos de experiência profissional</span></div>
+        <div class="stat-card"><strong>34</strong><span>repositórios no GitHub</span></div>
+        <div class="stat-card"><strong>9k+</strong><span>documentos automatizados via RPA</span></div>
+        <div class="stat-card"><strong>TOP 3</strong><span>prêmio de inovação do Senac</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="stack sec" id="stack" aria-labelledby="stackTitle">
+  <div class="wrap">
+    <p class="kicker">Minhas habilidades</p>
+    <h2 class="h2 reveal" id="stackTitle">Tecnologias que uso</h2>
+    <div class="filters" role="group" aria-label="Filtrar por área">
+      <button type="button" data-filter="all" aria-pressed="true">Tudo</button>
+      <button type="button" data-filter="backend" aria-pressed="false">Back-end</button>
+      <button type="button" data-filter="dados" aria-pressed="false">Dados</button>
+      <button type="button" data-filter="auto" aria-pressed="false">Automação</button>
+      <button type="button" data-filter="cloud" aria-pressed="false">Cloud e infra</button>
+      <button type="button" data-filter="proc" aria-pressed="false">Processos</button>
+    </div>
+    <div class="groups" id="groups">
+      <div class="group" data-cat="backend"><h3>Back-end</h3><ul>
+        <li class="tech"><span class="tech__logo">Jv</span>Java</li>
+        <li class="tech"><span class="tech__logo">Sb</span>Spring Boot</li>
+        <li class="tech"><span class="tech__logo">Jp</span>JPA/Hibernate</li>
+        <li class="tech"><span class="tech__logo">Py</span>Python</li>
+        <li class="tech"><span class="tech__logo">Js</span>JavaScript</li>
+        <li class="tech"><span class="tech__logo">Nd</span>Node.js</li>
+      </ul></div>
+      <div class="group" data-cat="dados"><h3>Dados</h3><ul>
+        <li class="tech"><span class="tech__logo">Sq</span>SQL</li>
+        <li class="tech"><span class="tech__logo">Pg</span>PostgreSQL</li>
+        <li class="tech"><span class="tech__logo">My</span>MySQL</li>
+        <li class="tech"><span class="tech__logo">Bi</span>Power BI</li>
+      </ul></div>
+      <div class="group" data-cat="auto"><h3>Automação</h3><ul>
+        <li class="tech"><span class="tech__logo">Mk</span>Make</li>
+        <li class="tech"><span class="tech__logo">n8</span>N8N</li>
+        <li class="tech"><span class="tech__logo">Pa</span>Power Automate</li>
+        <li class="tech"><span class="tech__logo">Pw</span>Playwright</li>
+        <li class="tech"><span class="tech__logo">Ps</span>PowerShell</li>
+        <li class="tech"><span class="tech__logo">Pf</span>Pipefy</li>
+      </ul></div>
+      <div class="group" data-cat="cloud"><h3>Cloud e infra</h3><ul>
+        <li class="tech"><span class="tech__logo">Az</span>Azure</li>
+        <li class="tech"><span class="tech__logo">Aw</span>AWS</li>
+        <li class="tech"><span class="tech__logo">Dk</span>Docker</li>
+        <li class="tech"><span class="tech__logo">Lx</span>Linux</li>
+        <li class="tech"><span class="tech__logo">Gt</span>Git e GitHub</li>
+        <li class="tech"><span class="tech__logo">Id</span>Entra ID</li>
+      </ul></div>
+      <div class="group" data-cat="proc"><h3>Processos e gestão</h3><ul>
+        <li class="tech"><span class="tech__logo">Bp</span>BPMN</li>
+        <li class="tech"><span class="tech__logo">Bz</span>Bizagi</li>
+        <li class="tech"><span class="tech__logo">Sc</span>Scrum</li>
+        <li class="tech"><span class="tech__logo">Kb</span>Kanban</li>
+        <li class="tech"><span class="tech__logo">It</span>ITIL 4</li>
+        <li class="tech"><span class="tech__logo">Jr</span>Jira</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section class="projects sec" id="projetos" aria-labelledby="projTitle">
+  <div class="wrap">
+    <p class="kicker">Projetos em destaque</p>
+    <h2 class="h2 reveal" id="projTitle">Alguns dos meus trabalhos recentes</h2>
+    <p class="lead" style="margin-top:24px">Abra um projeto para ver o que ele faz e como foi feito.</p>
+    <div class="plist" id="plist"></div>
+    <div class="repos">
+      <h3>Outros no GitHub</h3>
+      <p>Repositórios públicos, código aberto para leitura.</p>
+      <ul class="repos__list">
+        <li><a href="https://github.com/laeciojn/cadastro-usuario" target="_blank" rel="noopener">cadastro-usuario ↗</a><span>CRUD de cadastro de usuário com Spring Boot, H2, JPA e Lombok.</span></li>
+        <li><a href="https://github.com/laeciojn/library-api" target="_blank" rel="noopener">library-api ↗</a><span>API REST para biblioteca: cadastro, empréstimo e consulta.</span></li>
+        <li><a href="https://github.com/laeciojn/banco-digital" target="_blank" rel="noopener">banco-digital ↗</a><span>Simulação de banco digital: contas, transações e regras de negócio.</span></li>
+        <li><a href="https://github.com/laeciojn/bookstore-spring-jpa" target="_blank" rel="noopener">bookstore-spring-jpa ↗</a><span>API de livraria com Spring e JPA, com foco em relacionamentos.</span></li>
+        <li><a href="https://github.com/laeciojn/produtos-api" target="_blank" rel="noopener">produtos-api ↗</a><span>API REST de catálogo de produtos, organizada em camadas.</span></li>
+        <li><a href="https://github.com/laeciojn/arquitetura-spring" target="_blank" rel="noopener">arquitetura-spring ↗</a><span>Padrões de arquitetura em aplicações Spring.</span></li>
+        <li><a href="https://github.com/laeciojn/api-usuarios" target="_blank" rel="noopener">api-usuarios ↗</a><span>API de usuários em Java, praticando autenticação e camadas de serviço.</span></li>
+        <li><a href="https://github.com/laeciojn/estudo-python" target="_blank" rel="noopener">estudo-python ↗</a><span>Django e Pandas: Python aplicado a dados.</span></li>
+        <li><a href="https://github.com/laeciojn/logistica-dashboard-powerbi" target="_blank" rel="noopener">logistica-dashboard-powerbi ↗</a><span>Dashboard de indicadores de logística em Power BI.</span></li>
+        <li><a href="https://github.com/laeciojn/devops-cicd" target="_blank" rel="noopener">devops-cicd ↗</a><span>Primeiros pipelines de integração e entrega contínua.</span></li>
+        <li><a href="https://github.com/laeciojn/pinterest-clone" target="_blank" rel="noopener">pinterest-clone ↗</a><span>Clone de interface em HTML, CSS e JavaScript.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="exp sec" id="experiencia" aria-labelledby="expTitle">
+  <div class="wrap">
+    <p class="kicker">Experiência</p>
+    <h2 class="h2 reveal" id="expTitle">De suporte a sistemas, de sistemas a back-end</h2>
+    <div class="exp__list" id="expList">
+      <div class="job">
+        <button type="button" class="job__head" aria-expanded="false">
+          <span class="job__fill" aria-hidden="true"></span>
+          <span class="job__company">Develcode<span class="job__now">Atual</span></span>
+          <span class="job__role">Estagiário de Programação de Sistemas</span>
+          <span class="job__when">2026 – Atual</span>
+          <span class="job__plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="job__body"><p>Fábrica de software, remoto. Entrei na trilha de Desenvolvimento num processo com mais de duas mil candidaturas. Trabalho em squads com Java e React.</p></div>
+      </div>
+      <div class="job">
+        <button type="button" class="job__head" aria-expanded="false">
+          <span class="job__fill" aria-hidden="true"></span>
+          <span class="job__company">Boa Safra</span>
+          <span class="job__role">Estagiário de Sistemas e Processos</span>
+          <span class="job__when">Fev 2026 – 2026</span>
+          <span class="job__plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="job__body"><p>Integrações backend com GraphQL e Microsoft Graph API. Integrei Pipefy com Make, Microsoft Graph e Clicksign, coloquei um agente de IA em produção para o SESMT, automatizei o download de mais de 9.000 documentos e cuidei dos BIs corporativos.</p></div>
+      </div>
+      <div class="job">
+        <button type="button" class="job__head" aria-expanded="false">
+          <span class="job__fill" aria-hidden="true"></span>
+          <span class="job__company">Record</span>
+          <span class="job__role">Estagiário em Suporte de TI</span>
+          <span class="job__when">Set 2025 – Jan 2026</span>
+          <span class="job__plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="job__body"><p>Suporte técnico a produtores e repórteres, infraestrutura e hardware, Active Directory, PaperCut e sistemas internos.</p></div>
+      </div>
+      <div class="job">
+        <button type="button" class="job__head" aria-expanded="false">
+          <span class="job__fill" aria-hidden="true"></span>
+          <span class="job__company">BRB Serviços</span>
+          <span class="job__role">Aprendiz em Análise de Sistemas e Processos</span>
+          <span class="job__when">Out 2024 – Ago 2025</span>
+          <span class="job__plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="job__body"><p>Modelagem de processos em BPMN (Bizagi e Draw.io), fluxos de URA e chatbot, chamados em CRM, levantamento de requisitos, testes funcionais e gestão de GMUDs.</p></div>
+      </div>
+      <div class="job">
+        <button type="button" class="job__head" aria-expanded="false">
+          <span class="job__fill" aria-hidden="true"></span>
+          <span class="job__company">ASBAC Brasília</span>
+          <span class="job__role">Auxiliar Administrativo</span>
+          <span class="job__when">Mar 2024 – Out 2024</span>
+          <span class="job__plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="job__body"><p>Organização e digitalização de documentos, atualização de cadastros e atendimento presencial e telefônico.</p></div>
+      </div>
+      <div class="job">
+        <button type="button" class="job__head" aria-expanded="false">
+          <span class="job__fill" aria-hidden="true"></span>
+          <span class="job__company">Coco Bambu</span>
+          <span class="job__role">Aprendiz Operacional</span>
+          <span class="job__when">Jul 2022 – Jan 2024</span>
+          <span class="job__plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="job__body"><p>Primeira experiência profissional, com foco em rotina operacional e atendimento.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAÇÃO -->
+<section class="formacao sec" id="formacao" aria-labelledby="eduTitle">
+  <div class="wrap">
+    <p class="kicker">Formação</p>
+    <h2 class="h2 reveal" id="eduTitle">Estudo contínuo, na prática e na sala de aula</h2>
+    <div class="formacao__grid">
+      <div>
+        <div class="edu">
+          <p class="edu__when">Jan 2026 – Dez 2029 · em andamento</p>
+          <h3>Bacharelado em Sistemas de Informação</h3>
+          <p class="edu__school">Gran Faculdade</p>
+        </div>
+        <div class="edu">
+          <p class="edu__when">Fev 2024 – Dez 2025</p>
+          <h3>CST em Análise e Desenvolvimento de Sistemas</h3>
+          <p class="edu__school">Faculdade de Tecnologia e Inovação Senac-DF</p>
+        </div>
+        <p class="award"><b>TOP 3</b> no 3º Concurso de Projetos de Inovação do Senac</p>
+      </div>
+      <div>
+        <h3 class="formacao__sub">Certificações</h3>
+        <ul class="tags certs"><li>ITIL 4 Foundation</li><li>Scrum Foundation</li><li>Postman API Fundamentals Student Expert</li><li>Fundamentos da Infraestrutura AWS</li><li>AWS Academy Cloud Foundations</li><li>Grafana: Dashboards e Monitoramento</li><li>Claude Code in Action</li><li>Masterclasses Pipefy</li><li>Modelagem de Processos com Bizagi</li><li>Introdução ao Linux</li><li>Fundamentos de APIs REST</li><li>Git e GitHub</li></ul>
+        <h3 class="formacao__sub">Idiomas</h3>
+        <p class="formacao__lang">Inglês: nível elementar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato" aria-labelledby="contactTitle">
+  <div class="wrap">
+    <div class="contato__grid">
+      <div>
+        <p class="kicker">Vamos conversar</p>
+        <h2 class="contato__q" id="contactTitle">Tem uma oportunidade em mente?</h2>
+        <p class="contato__lede">Estou aberto a conversar sobre vagas de estágio ou júnior em desenvolvimento back-end.</p>
+        <div class="contato__row">
+          <a class="btn btn--solid magnetic" href="mailto:laeciojesusn@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">Entrar em contato ↗</a>
+          <button type="button" class="btn btn--ghost magnetic" id="copyMail">Copiar e-mail</button>
+        </div>
+        <p class="copy-note" id="copyNote" aria-live="polite"></p>
+      </div>
+      <dl class="status">
+        <div><dt>Cargo atual</dt><dd>Estagiário de Programação de Sistemas · Develcode</dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:laeciojesusn@gmail.com">laeciojesusn@gmail.com</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/laecioneves" target="_blank" rel="noopener">/in/laecioneves</a></dd></div>
+        <div><dt>GitHub</dt><dd><a href="https://github.com/laeciojn" target="_blank" rel="noopener">/laeciojn</a></dd></div>
+      </dl>
+    </div>
+    <footer class="footer">
+      <span>© 2026 Laécio Neves. Todos os direitos reservados.</span>
+      <button type="button" class="to-top" id="toTop">Voltar ao topo</button>
+    </footer>
+  </div>
+</section>
+
+</main>
+</div>
+</div>
+
+<!-- GSAP e plugins (carregados como globais: window.gsap) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+<!-- Código do site, dividido em módulos por funcionalidade -->
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

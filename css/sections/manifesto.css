@@ -1,0 +1,4 @@
+/* manifesto */
+.manifesto{background:var(--paper)}
+.manifesto p{font-size:clamp(34px,5vw,80px);line-height:1.04;letter-spacing:-.025em;font-weight:620;max-width:20ch;font-variation-settings:"opsz" 80}
+.manifesto .word{display:inline-block}

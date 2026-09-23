@@ -1,0 +1,5 @@
+/* loader */
+.loader{display:none}
+.js .loader{display:flex;clip-path:inset(0 0 0% 0);position:fixed;inset:0;z-index:100;background:var(--cobalt);color:#fff;flex-direction:column;justify-content:space-between;padding:calc(var(--pad) + env(safe-area-inset-top,0px)) var(--pad) calc(var(--pad) + env(safe-area-inset-bottom,0px))}
+.loader__name{font-size:clamp(20px,2.4vw,28px);font-weight:500}
+.loader__count{font-size:clamp(96px,20vw,280px);font-weight:800;font-variation-settings:"wdth" 75;line-height:.8;align-self:flex-end;font-variant-numeric:tabular-nums}
