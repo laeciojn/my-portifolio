@@ -1,4 +1,4 @@
-/* Barra de progresso, topo fixo e cursor. */
+/* Barra de progresso e topo fixo. */
 /* chrome */
 .progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--signal);transform-origin:0 50%;transform:scaleX(0);z-index:70}
 .bar{position:fixed;top:0;left:0;right:0;z-index:60;padding:calc(16px + env(safe-area-inset-top,0px)) var(--pad) 16px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff;pointer-events:none}
@@ -12,7 +12,4 @@
 .menu-btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 4px;background:none;border:none;color:inherit;font:600 17px var(--font);cursor:pointer}
 .menu-btn__lines{display:grid;gap:6px;width:28px}
 .menu-btn__lines i{display:block;height:2px;background:currentColor}
-.cursor{position:fixed;top:0;left:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--signal);z-index:95;pointer-events:none;display:none;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#0A0F3D}
-.cursor span{opacity:0;white-space:nowrap}
-@media (pointer:fine){.js .cursor{display:flex}}
 @media (min-width:900px){.bar__nav{display:flex}.menu-btn{display:none}}
