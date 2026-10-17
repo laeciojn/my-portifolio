@@ -11,4 +11,10 @@
 .menu__main a:hover span{color:var(--signal)}
 .menu__small a{display:inline-block;font-size:22px;font-weight:600;text-decoration:none;padding:8px 0;border-bottom:2px solid transparent}
 .menu__small a:hover{border-color:var(--signal)}
-@media (max-width:900px){.menu__grid{grid-template-columns:1fr;gap:36px}.menu__main{order:-1}}
+@media (max-width:900px){
+  .menu{padding:calc(80px + env(safe-area-inset-top,0px)) var(--pad) calc(40px + env(safe-area-inset-bottom,0px))}
+  .menu__grid{grid-template-columns:1fr;gap:32px}
+  .menu__main{order:-1}
+  .menu__main a{font-size:clamp(32px,8.5vw,56px);padding:4px 0}
+  .menu__small a{font-size:18px;padding:6px 0}
+}

@@ -13,6 +13,7 @@ import { initStack } from './features/stack.js';
 import { initMarquee } from './features/marquee.js';
 import { initExperience } from './features/experience.js';
 import { initProjects, isProjectOpen, closeProject } from './features/projects.js';
+import { initRepos } from './features/repos.js';
 import { initContact } from './features/contact.js';
 
 registerPlugins();
@@ -28,6 +29,7 @@ initStack();
 initMarquee();
 initExperience();
 initProjects();
+initRepos();
 initContact();
 refreshOnLoad();
 

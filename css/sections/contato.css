@@ -18,4 +18,16 @@
 .status a{color:var(--signal);text-decoration:none}
 .status a:hover{text-decoration:underline;text-underline-offset:4px}
 .contato .footer{margin-top:clamp(64px,8vw,110px)}
-@media (max-width:900px){.contato__grid{grid-template-columns:1fr}.status dd{text-align:left}}
+@media (max-width:900px){
+  .contato .wrap{padding-block:clamp(70px,11vw,120px) 36px}
+  .contato__grid{grid-template-columns:1fr;gap:40px}
+  .contato__q{font-size:clamp(32px,7.5vw,56px);max-width:100%}
+  .status{padding:8px 20px;border-radius:22px}
+  .status div{flex-direction:column;align-items:flex-start;gap:4px;padding:14px 0}
+  .status dd{text-align:left}
+}
+@media (max-width:480px){
+  .contato__row{flex-direction:column}
+  .contato__row .btn{width:100%;justify-content:center}
+  .footer{flex-direction:column;align-items:flex-start;gap:12px}
+}

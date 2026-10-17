@@ -25,7 +25,9 @@ export function initReveals() {
   });
 
   gsap.from('.sobre__text > p', { y: 30, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.1, scrollTrigger: { trigger: '.sobre__text', start: 'top 80%' } });
-  gsap.from('.stat-card', { y: 40, opacity: 0, duration: 0.8, ease: 'back.out(1.6)', stagger: 0.08, scrollTrigger: { trigger: '.stat-grid', start: 'top 85%' } });
+  if (document.querySelector('.stat-grid')) {
+    gsap.from('.stat-card', { y: 40, opacity: 0, duration: 0.8, ease: 'back.out(1.6)', stagger: 0.08, scrollTrigger: { trigger: '.stat-grid', start: 'top 85%' } });
+  }
   gsap.from('.edu, .award, .formacao__grid > div:last-child > *', { y: 30, opacity: 0, duration: 0.8, ease: 'power3.out', stagger: 0.06, scrollTrigger: { trigger: '.formacao__grid', start: 'top 80%' } });
   gsap.from('.repos__list li', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', stagger: 0.04, scrollTrigger: { trigger: '.repos__list', start: 'top 85%' } });
   gsap.from('.job', { x: -40, opacity: 0, duration: 0.8, ease: 'expo.out', stagger: 0.07, scrollTrigger: { trigger: '#expList', start: 'top 85%' } });

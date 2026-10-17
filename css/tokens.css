@@ -5,7 +5,7 @@
   --accent-text:#2130F0;
   --on-cobalt-soft:rgba(255,255,255,.78);
   --font:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
-  --pad:clamp(20px,5vw,72px);
+  --pad:clamp(16px,4.5vw,72px);
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
